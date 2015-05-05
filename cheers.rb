@@ -50,5 +50,12 @@ end
 puts name + "'s just GRAND!"
 puts  "Hey, #{name}, what's your birthday?"
 birthday = gets
-puts "Awesome! Your birthday is in #{birthday}! Happy Birthday in advance!"
+
+
+time_now = Time.now
+month, day = birthday.split("/")
+birthday = Time.new(Time.now.year, month, day)
+difference = birthday.strftime('%j').to_i - time_now.strftime('%j').to_i
+
+puts "Awesome! Your birthday is in #{difference} days! Happy Birthday in advance!"
 
